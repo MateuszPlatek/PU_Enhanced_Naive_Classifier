@@ -7,7 +7,7 @@ from sklearn.datasets import load_breast_cancer # for exemplary data set
 
 def sigma(s):
     '''
-    Sigmoid function
+    Logistic function
     '''
     import warnings
     with warnings.catch_warnings():
