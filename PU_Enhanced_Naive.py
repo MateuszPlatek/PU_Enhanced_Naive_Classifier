@@ -4,12 +4,12 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from sklearn.datasets import load_breast_cancer # for exemplary data set
+import warnings
 
 def sigma(s):
     '''
     Logistic function
     '''
-    import warnings
     with warnings.catch_warnings():
         warnings.simplefilter("ignore") # Turns off redundant warnings
         # about overflow in exp(s)
@@ -120,7 +120,7 @@ y = np.array( data[1] )
 
 
 ### Defining test as a function
-def test(X, y, c = 0.5, test_size = 0.2, n_best_features = 5):
+def test(X, y, c = 0.5, test_size = 0.2):
     s = create_s(y, c)
     
     X_train, X_test, y_train, y_test, s_train, s_test = train_test_split(X, y, s, test_size = test_size)
